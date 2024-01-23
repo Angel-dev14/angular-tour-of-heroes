@@ -9,6 +9,5 @@ import {HEROES} from './mock-heroes';
 })
 export class AppComponent {
 
-
   protected readonly HEROES = HEROES;
 }

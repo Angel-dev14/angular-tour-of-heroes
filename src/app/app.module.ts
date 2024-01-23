@@ -11,6 +11,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AsyncPipe, CommonModule} from '@angular/common';
+// import { ReactiveComponent } from './reactive/reactive.component';
+import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import {AsyncPipe, CommonModule} from '@angular/common';
     HeroDetailsComponent,
     NavBarComponent,
     HomeComponent,
+    // ReactiveComponent,
+    RxjsExampleComponent,
+    RxjsOperatorsComponent,
 
   ],
   imports: [
