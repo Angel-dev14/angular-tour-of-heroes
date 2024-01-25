@@ -1,0 +1,14 @@
+li {
+  border: 1px dashed black;
+  padding: 5px;
+  width: 200px;
+  margin: 5px 0;
+}
+li:hover {
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+ul {
+  list-style: none;
+}

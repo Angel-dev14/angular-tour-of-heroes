@@ -1,0 +1,25 @@
+<p>order works!</p>
+
+
+<ul>
+  <li
+    *ngFor="let item of items"
+    (click)="itemClick(item)"
+  >
+    {{item}}
+  </li>
+</ul>
+<hr>
+<h4>Orders:</h4>
+<ul>
+  <li *ngFor="let order of orders">
+    {{order}}
+  </li>
+</ul>
+
+<ng-container *ngIf="paymentDone">
+  <span style="background-color: green; color: white">
+    {{paymentDone}}
+  </span>
+</ng-container>
+

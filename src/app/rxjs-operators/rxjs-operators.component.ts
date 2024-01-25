@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {combineLatest, map, mergeMap, Observable, Subject, switchMap, take, tap, zip} from 'rxjs';
+import {combineLatest, concatMap, map, mergeMap, Observable, Subject, switchMap, take, tap, zip} from 'rxjs';
 
 type Durum = ['flat bread', 'meat', 'sauce', 'tomato', 'cabbage'];
 
@@ -70,7 +70,7 @@ export class RxjsOperatorsComponent implements OnInit {
       );
     this.delivery$ = this._order$.pipe(
       tap((order) => console.log('Order comes: ', order)),
-      switchMap(order => this.durum$.pipe(
+      concatMap(order => this.durum$.pipe(
         take(order.amount),
         map((durum) => ({product: durum as Durum, customerId: order.customerId}))
       )),

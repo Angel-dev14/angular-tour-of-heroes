@@ -14,6 +14,7 @@ import {AsyncPipe, CommonModule} from '@angular/common';
 // import { ReactiveComponent } from './reactive/reactive.component';
 import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.componen
     // ReactiveComponent,
     RxjsExampleComponent,
     RxjsOperatorsComponent,
+    OrderComponent,
 
   ],
   imports: [
