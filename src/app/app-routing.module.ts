@@ -1,25 +1,35 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {Router, RouterModule, Routes} from '@angular/router';
 import {HeroesComponent} from './heroes/heroes.component';
 import {HomeComponent} from './home/home.component';
 import {HeroDetailsComponent} from './heroes/hero-details/hero-details.component';
+import {RxjsMemoryLeakComponent} from './rxjs-memory-leak/rxjs-memory-leak.component';
+import {LoginComponent} from './login/login.component';
+import {canActivateChildImpl, LoginGuard} from './guards/login-guard';
 
 const routes: Routes = [
   {
-    path: 'home', component: HomeComponent
+    path: 'login', component: LoginComponent,
   },
   {
-    path: 'heroes', component: HeroesComponent, children: [
+    path: 'home', component: HomeComponent, children: [
       {
-        path: ':id',
-        component: HeroDetailsComponent
-      }
-    ]
-  }, {
-    path: 'news', loadChildren: () => import('./news/weather.module').then(m => m.WeatherModule)
+        path: 'heroes', component: HeroesComponent, children: [
+          {
+            path: ':id',
+            component: HeroDetailsComponent
+          }
+        ]
+      }, {
+        path: 'news', loadChildren: () => import('./news/weather.module').then(m => m.WeatherModule)
+      },
+      {
+        path: 'leak', component: RxjsMemoryLeakComponent,
+      },
+    ], canActivateChild: [canActivateChildImpl],
   },
   {
-    path: '**', redirectTo: 'home', pathMatch: 'full'
+    path: '**', redirectTo: 'login', pathMatch: 'full'
   }
 ]
 
@@ -29,6 +39,7 @@ const routes: Routes = [
       bindToComponentInputs: true
     })
   ],
+  providers: [Router],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

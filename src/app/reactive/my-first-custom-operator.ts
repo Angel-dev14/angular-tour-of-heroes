@@ -57,5 +57,4 @@ function delay<T>(delayInMillis: number) {
     });
 }
 
-// Try it out!
-of(1, 2, 3).pipe(delay(1000)).subscribe(console.log);
+// of(1, 2, 3).pipe(delay(1000)).subscribe(console.log);

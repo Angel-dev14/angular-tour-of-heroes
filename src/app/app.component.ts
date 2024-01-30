@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {HEROES} from './mock-heroes';
 import {iterator} from 'rxjs/internal/symbol/iterator';
+import {HeroesService} from './services/heroes/heroes.service';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +15,20 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild("screen1", {read: ElementRef, static: true}) screenRef: ElementRef
 
+  constructor(
+    private _service$: HeroesService,
+  ) {
+
+  }
+
+
   ngOnInit(): void {
-    console.log('ON INTI',this.screenRef);
-    this.screen = 2; // some permission evaluates to 2
-    console.log(document)
+    console.log('APP INIT')
   }
 
   ngAfterViewInit(): void {
-    console.log(this.screenRef);
+    setInterval(() => {
+      this._service$._state$.next("state");
+    }, 1000);
   }
 }

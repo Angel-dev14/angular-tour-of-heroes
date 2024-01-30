@@ -15,6 +15,9 @@ import {AsyncPipe, CommonModule} from '@angular/common';
 import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { OrderComponent } from './order/order.component';
+import { RxjsMemoryLeakComponent } from './rxjs-memory-leak/rxjs-memory-leak.component';
+import { ElementRefComponent } from './element-ref/element-ref.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { OrderComponent } from './order/order.component';
     RxjsExampleComponent,
     RxjsOperatorsComponent,
     OrderComponent,
+    RxjsMemoryLeakComponent,
+    ElementRefComponent,
+    LoginComponent,
 
   ],
   imports: [
