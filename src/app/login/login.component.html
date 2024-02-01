@@ -1,6 +1,17 @@
 <div class="main">
-  <h2>Please Login</h2>
-  <button routerLink="/heroes">login</button>
+
+  <label for="username">Username</label>
+  <input [formControl]="usernameControl" id="username" type="text">
+
+  <hr />
+
+
+  <label for="password">Password</label>
+  <input [formControl]="passwordControl" id="password" type="text">
+
+
+  <button (click)="onSubmit()">Login</button>
+
 </div>
 
 
