@@ -19,6 +19,9 @@ export class UnlessDirective {
       // SHOULD DISPLAY
       console.log(this._templateRef);
       this._viewContainerRef.createEmbeddedView(this._templateRef);
+      // setTimeout(() => {
+      //   this._viewContainerRef.clear();
+      // }, 1000)
     }
     // return ng tempalate wrapped from viewa
   }
