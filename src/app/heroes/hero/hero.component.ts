@@ -8,8 +8,8 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import {Hero} from '../../hero';
-import {HeroesService} from '../../services/heroes/heroes.service';
+import {Hero} from '../../examples/hero';
+import {HeroesService} from '../../services/heroes.service';
 
 @Component({
   selector: 'hero',

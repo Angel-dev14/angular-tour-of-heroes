@@ -1,16 +1,15 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {Hero} from '../hero';
-import {HEROES} from '../mock-heroes';
-import {HeroesService} from '../services/heroes/heroes.service';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {WeatherService} from '../news/services/weather.service';
+import {Hero} from '../examples/hero';
+import {HeroesService} from '../services/heroes.service';
+import { CanDeactivateMyComponent } from '../guards/can-deactivate-my-component';
 
 @Component({
   selector: 'heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
 })
-export class HeroesComponent {
+export class HeroesComponent implements CanDeactivateMyComponent {
 
   heroes: Hero[];
   selectedHero?: Hero;
@@ -19,7 +18,6 @@ export class HeroesComponent {
     private _heroesService: HeroesService,
     private _router: Router,
     private _route: ActivatedRoute,
-    private _newsService: WeatherService
   ) {
     this.heroes = _heroesService.findAllHeroes();
   }
@@ -30,5 +28,10 @@ export class HeroesComponent {
     this._router.navigate([hero.id], {
       relativeTo: this._route
     });
+  }
+
+  canDeactivateLogic(): boolean {
+    // if(hasUnsavedChanges)
+    return true;
   }
 }

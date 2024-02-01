@@ -1,35 +1,33 @@
-import {NgModule} from '@angular/core';
-import {Router, RouterModule, Routes} from '@angular/router';
-import {HeroesComponent} from './heroes/heroes.component';
-import {HomeComponent} from './home/home.component';
-import {HeroDetailsComponent} from './heroes/hero-details/hero-details.component';
-import {RxjsMemoryLeakComponent} from './rxjs-memory-leak/rxjs-memory-leak.component';
-import {LoginComponent} from './login/login.component';
-import {canActivateChildImpl, LoginGuard} from './guards/login-guard';
+import { NgModule } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { HeroesComponent } from './heroes/heroes.component';
+import { LoginComponent } from './login/login.component';
+import { authGuard } from './guards/authn-guard.service';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { canDeactivateGuard, CanDeactivateGuard } from './guards/can-deactivate-guard';
 
 const routes: Routes = [
   {
-    path: 'login', component: LoginComponent,
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'heroes',
+        component: HeroesComponent,
+        canDeactivate: [ canDeactivateGuard ]
+      },
+    ],
+    canActivateChild: [ authGuard ],
+    canDeactivate: [ CanDeactivateGuard ]
   },
   {
-    path: 'home', component: HomeComponent, children: [
-      {
-        path: 'heroes', component: HeroesComponent, children: [
-          {
-            path: ':id',
-            component: HeroDetailsComponent
-          }
-        ]
-      }, {
-        path: 'news', loadChildren: () => import('./news/weather.module').then(m => m.WeatherModule)
-      },
-      {
-        path: 'leak', component: RxjsMemoryLeakComponent,
-      },
-    ], canActivateChild: [canActivateChildImpl],
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: '**', redirectTo: 'login', pathMatch: 'full'
+    path: 'access-denied',
+    component: AccessDeniedComponent,
   }
 ]
 
@@ -39,8 +37,8 @@ const routes: Routes = [
       bindToComponentInputs: true
     })
   ],
-  providers: [Router],
-  exports: [RouterModule]
+  providers: [ Router ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule {
 

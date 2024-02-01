@@ -5,10 +5,10 @@ import {
   ElementRef,
   Input, OnDestroy, OnInit,
 } from '@angular/core';
-import {Hero} from '../../hero';
-import {ActivatedRoute} from '@angular/router';
-import {HeroesService} from '../../services/heroes/heroes.service';
-import {map, mergeMap, Observable, Subscriber} from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { map, mergeMap } from 'rxjs';
+import { HeroesService } from '../../services/heroes.service';
+import { Hero } from '../../examples/hero';
 
 @Component({
   selector: 'hero-details',

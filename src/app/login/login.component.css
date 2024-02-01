@@ -1,0 +1,18 @@
+button {
+  width: 250px;
+  height: 2em;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 0;
+}
+
+
+.main {
+  width: 400px;
+  margin: 2em auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}

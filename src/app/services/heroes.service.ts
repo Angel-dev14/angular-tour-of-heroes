@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {Hero} from '../../hero';
-import {HEROES} from '../../mock-heroes';
-import {fromEvent, Observable, of, Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
+import { Hero } from '../examples/hero';
+import { HEROES } from '../examples/mock-heroes';
 
 @Injectable({providedIn: 'root'})
 export class HeroesService {

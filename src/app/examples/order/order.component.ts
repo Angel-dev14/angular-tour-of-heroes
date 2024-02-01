@@ -13,8 +13,6 @@ import {
   switchMap, take,
   tap
 } from 'rxjs';
-import {merge} from 'rxjs/internal/operators/merge';
-import {notNull} from '../reactive/not-null';
 import {notEven} from '../reactive/my-first-custom-operator';
 
 @Component({

@@ -1,7 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {HEROES} from './mock-heroes';
-import {iterator} from 'rxjs/internal/symbol/iterator';
-import {HeroesService} from './services/heroes/heroes.service';
+import { HeroesService } from './services/heroes.service';
 
 @Component({
   selector: 'app-root',
