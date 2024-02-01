@@ -17,6 +17,9 @@ import { OrderComponent } from './examples/order/order.component';
 import { ElementRefComponent } from './examples/element-ref/element-ref.component';
 import { HomeComponent } from './home/home.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { HighlightDirective } from './directives/unstructural-directives/highlight.directive';
+import { UnlessDirective } from './directives/structural-directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { AccessDeniedComponent } from './access-denied/access-denied.component';
     ElementRefComponent,
     LoginComponent,
     AccessDeniedComponent,
+    DirectivesComponent,
+    HighlightDirective,
+    UnlessDirective,
   ],
   imports: [
     CommonModule,
