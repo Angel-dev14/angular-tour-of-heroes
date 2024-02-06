@@ -1,16 +1,46 @@
 <div class="main">
 
-  <label for="username">Username</label>
-  <input [formControl]="usernameControl" id="username" type="text">
+<!--  <label for="username">Username</label>-->
+<!--  <input-->
+<!--    [formControl]="usernameControl"-->
+<!--    id="username"-->
+<!--    type="text"-->
+<!--    [required]="usernameControl.invalid"-->
+<!--  >-->
+<!--  <small *ngIf="usernameControl.invalid">-->
+<!--    {{usernameControl['errors']['error']}}-->
+<!--  </small>-->
 
-  <hr />
+<!--  {{value}}-->
+
+<!--  <hr/>-->
+<!--  <label for="password">Password</label>-->
+<!--  <input [formControl]="passwordControl" [placeholder]="'asd'" id="password" type="text">-->
+
+<!--  <button-->
+<!--    [disabled]="usernameControl.invalid ||-->
+<!--    passwordControl.invalid"-->
+<!--    (click)="onSubmit()">Login</button>-->
+
+<!--  <form [formGroup]="registrationForm">-->
+
+<!--    <ng-container-->
+<!--      *ngFor="let control of registrationForm.controls"-->
+<!--    >-->
+<!--      <input type="text" [formControlName]="control.name">-->
+<!--    </ng-container>-->
+
+<!--    <button-->
+<!--      [disabled]="!registrationForm.valid"-->
+<!--    >submit</button>-->
+
+<!--  </form>-->
 
 
-  <label for="password">Password</label>
-  <input [formControl]="passwordControl" id="password" type="text">
+  <div *ngFor="let taskForm of tasks">
+    <input type="text" [formControl]="taskForm">
+  </div>
 
-
-  <button (click)="onSubmit()">Login</button>
 
 </div>
 

@@ -16,3 +16,8 @@ button {
   align-items: center;
   gap: 1em;
 }
+
+
+input[required] {
+  border: 1px solid red;
+}
