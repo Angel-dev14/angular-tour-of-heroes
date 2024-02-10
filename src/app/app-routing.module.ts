@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { authGuard } from './guards/authn-guard.service';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { canDeactivateGuard, CanDeactivateGuard } from './guards/can-deactivate-guard';
+import { TodolistComponent } from './todolist/todolist.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
     ],
     canActivateChild: [ authGuard ],
     canDeactivate: [ CanDeactivateGuard ]
+  },
+  {
+    path: 'todo',
+    component: TodolistComponent,
   },
   {
     path: 'login',

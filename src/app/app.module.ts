@@ -20,6 +20,8 @@ import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HighlightDirective } from './directives/unstructural-directives/highlight.directive';
 import { UnlessDirective } from './directives/structural-directives/unless.directive';
+import { TodolistComponent } from './todolist/todolist.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { UnlessDirective } from './directives/structural-directives/unless.direc
     DirectivesComponent,
     HighlightDirective,
     UnlessDirective,
+    TodolistComponent,
+    TaskComponent,
   ],
   imports: [
     CommonModule,
