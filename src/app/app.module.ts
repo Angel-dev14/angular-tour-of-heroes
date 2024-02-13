@@ -22,6 +22,8 @@ import { HighlightDirective } from './directives/unstructural-directives/highlig
 import { UnlessDirective } from './directives/structural-directives/unless.directive';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TaskComponent } from './task/task.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppMaterialModule } from './app-material.module';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { TaskComponent } from './task/task.component';
     HttpClientModule,
     AsyncPipe,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppMaterialModule,
   ],
   providers: [],
   exports: [],

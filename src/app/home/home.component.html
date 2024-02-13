@@ -1,5 +1,35 @@
+
 <p>visibile accross all</p>
-<main>
-  <router-outlet></router-outlet>
-</main>
+
+<!--<button-->
+<!--  mat-button-->
+<!--  color="primary"-->
+<!--&gt;-->
+<!--  <mat-icon>gps_fixed</mat-icon>-->
+<!--  My first button-->
+<!--</button>-->
+<div>
+<mat-checkbox
+  [color]='task.color'
+  [formControl]='parentTask'
+  [indeterminate]='taskMissing'
+>{{task.name}}</mat-checkbox>
+</div>
+
+<form [formGroup]='subtaskGroup'>
+  <mat-checkbox
+    *ngFor='let t of task.subtasks; index as i'
+    [formControlName]='t.name'
+    [color]='t.color'
+    [value]='t.name'
+    (change)='test($event)'
+    [id]='"2"'
+  >
+    {{t.name}}
+  </mat-checkbox>
+</form>
+
+<!--<main>-->
+<!--  <router-outlet></router-outlet>-->
+<!--</main>-->
 
